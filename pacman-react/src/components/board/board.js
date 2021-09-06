@@ -62,9 +62,9 @@ const YMap = {
 function Board({}) {
   const [PacX, setX] = useState(0);
   const [PacY, setY] = useState(0);
-  const [BlinkyX, setBX] = useState(15);
+  const [BlinkyX, setBX] = useState(14);
   const [BlinkyY, setBY] = useState(20);
-  const [PinkyX, setPX] = useState(12);
+  const [PinkyX, setPX] = useState(16);
   const [PinkyY, setPY] = useState(20);
 
   function handleKeyPress(e) {
@@ -75,14 +75,24 @@ function Board({}) {
   }
 
   function randomMove() {
-    const BlinkMoveX = XMap[Math.floor(Math.random() * 4)];
-    const BlinkMoveY = YMap[Math.floor(Math.random() * 4)];
-    const PinkMoveX = XMap[Math.floor(Math.random() * 4)];
-    const PinkMoveY = YMap[Math.floor(Math.random() * 4)];
-    BlinkMoveX && setBX(BlinkMoveX);
-    BlinkMoveY && setBY(BlinkMoveY);
-    PinkMoveX && setPX(PinkMoveX);
-    PinkMoveY && setPY(PinkMoveY);
+    const BlinkyMove = Math.floor(Math.random() * 4);
+    const PinkyMove = Math.floor(Math.random() * 4);
+    if (BlinkyMove == 0 || BlinkyMove == 1) {
+      const BlinkMoveX = XMap[Math.floor(Math.random() * 4)];
+      BlinkMoveX && setBX(BlinkMoveX);
+    }
+    if (BlinkyMove == 2 || BlinkyMove == 3) {
+      const BlinkMoveY = YMap[Math.floor(Math.random() * 4)];
+      BlinkMoveY && setBY(BlinkMoveY);
+    }
+    if (PinkyMove == 0 || PinkyMove == 1) {
+      const PinkMoveX = XMap[Math.floor(Math.random() * 4)];
+      PinkMoveX && setPX(PinkMoveX);
+    }
+    if (PinkyMove == 2 || PinkyMove == 3) {
+      const PinkMoveY = YMap[Math.floor(Math.random() * 4)];
+      PinkMoveY && setPY(PinkMoveY);
+    }
   }
 
   useEffect(() => {
