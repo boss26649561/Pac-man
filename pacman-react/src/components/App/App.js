@@ -1,12 +1,12 @@
 import React from "react";
 import Menu from "components/Menu/Menu";
-import Game from "components/Game/Game";
+import board from "components/board/board";
 import { Route, Switch } from "react-router-dom";
 function App() {
   return (
     <Switch>
       <Route exact path="/" component={Menu} />
-      <Route path="/game" component={Game} />
+      <Route path="/game" component={board} />
     </Switch>
   );
 }
