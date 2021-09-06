@@ -77,20 +77,20 @@ function Board({}) {
   function randomMove() {
     const BlinkyMove = Math.floor(Math.random() * 4);
     const PinkyMove = Math.floor(Math.random() * 4);
-    if (BlinkyMove == 0 || BlinkyMove == 1) {
-      const BlinkMoveX = XMap[Math.floor(Math.random() * 4)];
+    if (BlinkyMove === 0 || BlinkyMove === 1) {
+      const BlinkMoveX = XMap[BlinkyMove];
       BlinkMoveX && setBX(BlinkMoveX);
     }
-    if (BlinkyMove == 2 || BlinkyMove == 3) {
-      const BlinkMoveY = YMap[Math.floor(Math.random() * 4)];
+    if (BlinkyMove === 2 || BlinkyMove === 3) {
+      const BlinkMoveY = YMap[BlinkyMove];
       BlinkMoveY && setBY(BlinkMoveY);
     }
-    if (PinkyMove == 0 || PinkyMove == 1) {
-      const PinkMoveX = XMap[Math.floor(Math.random() * 4)];
+    if (PinkyMove === 0 || PinkyMove === 1) {
+      const PinkMoveX = XMap[PinkyMove];
       PinkMoveX && setPX(PinkMoveX);
     }
-    if (PinkyMove == 2 || PinkyMove == 3) {
-      const PinkMoveY = YMap[Math.floor(Math.random() * 4)];
+    if (PinkyMove === 2 || PinkyMove === 3) {
+      const PinkMoveY = YMap[PinkyMove];
       PinkMoveY && setPY(PinkMoveY);
     }
   }
