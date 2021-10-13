@@ -15,6 +15,8 @@ class Player:
         self.current_score = 0
         self.speed = 2
         self.lives = 3
+        self.power = False
+        self.start_ticks=pygame.time.get_ticks()
 
     def update(self):
         if self.able_to_move:
@@ -33,6 +35,13 @@ class Player:
             eat.play()
             eat.set_volume(0.1)
             self.eat_coin()
+        if self.on_pellet():
+            self.eat_pellet()
+        if self.power==True:
+            self.speed=4
+        elif self.power==False:
+            self.speed=2
+        
 
     def draw(self):
         pygame.draw.circle(self.app.screen, PLAYER_COLOUR, (int(self.pix_pos.x),
@@ -56,9 +65,28 @@ class Player:
                     return True
         return False
 
+    def on_pellet(self):
+        if self.grid_pos in self.app.pellet:
+            if int(self.pix_pos.x+TOP_BOTTOM_BUFFER//2) % self.app.cell_width == 0:
+                if self.direction == vec(1, 0) or self.direction == vec(-1, 0):
+                    return True
+            if int(self.pix_pos.y+TOP_BOTTOM_BUFFER//2) % self.app.cell_height == 0:
+                if self.direction == vec(0, 1) or self.direction == vec(0, -1):
+                    return True
+        return False
+
     def eat_coin(self):
         self.app.coins.remove(self.grid_pos)
         self.current_score += 1
+
+    def eat_pellet(self):
+        self.app.pellet.remove(self.grid_pos)
+        self.power=True
+        seconds=(pygame.time.get_ticks()-self.start_ticks)/1000 #calculate how many seconds
+        if seconds>10:
+            self.power=False
+
+        
 
     def move(self, direction):
         self.stored_direction = direction

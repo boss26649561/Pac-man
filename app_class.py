@@ -20,6 +20,7 @@ class App:
         self.cell_height = MAZE_HEIGHT//ROWS
         self.walls = []
         self.coins = []
+        self.pellet = []
         self.enemies = []
         self.e_pos = []
         self.p_pos = None
@@ -27,6 +28,7 @@ class App:
         self.load()
         self.player = Player(self, vec(self.p_pos))
         self.make_enemies()
+        #self.draw_grid()
 
     def run(self):
         while self.running:
@@ -78,6 +80,8 @@ class App:
                         self.p_pos = [xidx, yidx]
                     elif char in ["2", "3", "4", "5"]:
                         self.e_pos.append([xidx, yidx])
+                    elif char ==  "6":
+                        self.pellet.append(vec(xidx, yidx))
                         
                     elif char == "B":
                         pygame.draw.rect(self.background, BLACK, (xidx*self.cell_width, yidx*self.cell_height,
@@ -110,11 +114,14 @@ class App:
             enemy.direction *= 0
 
         self.coins = []
+        self.pellet = []
         with open("walls.txt", 'r') as file:
             for yidx, line in enumerate(file):
                 for xidx, char in enumerate(line):
                     if char == 'C':
                         self.coins.append(vec(xidx, yidx))
+                    if char == '6':
+                        self.pellet.append(vec[xidx, yidx])
         self.state = "playing"
 
 
@@ -136,8 +143,7 @@ class App:
                        WIDTH//2, HEIGHT//2-50], START_TEXT_SIZE, (170, 132, 58), START_FONT, centered=True)
         self.draw_text('1 PLAYER ONLY', self.screen, [
                        WIDTH//2, HEIGHT//2+50], START_TEXT_SIZE, (44, 167, 198), START_FONT, centered=True)
-        self.draw_text('HIGH SCORE', self.screen, [4, 0],
-                       START_TEXT_SIZE, (255, 255, 255), START_FONT)
+
         pygame.display.update()
 
 ########################### PLAYING FUNCTIONS ##################################
@@ -173,6 +179,7 @@ class App:
         self.screen.fill(BLACK)
         self.screen.blit(self.background, (TOP_BOTTOM_BUFFER//2, TOP_BOTTOM_BUFFER//2))
         self.draw_coins()
+        self.draw_pellets()
         # self.draw_grid()
         self.draw_text('CURRENT SCORE: {}'.format(self.player.current_score),
                        self.screen, [60, 0], 18, WHITE, START_FONT)
@@ -200,7 +207,12 @@ class App:
         for coin in self.coins:
             pygame.draw.circle(self.screen, (124, 123, 7),
                                (int(coin.x*self.cell_width)+self.cell_width//2+TOP_BOTTOM_BUFFER//2,
-                                int(coin.y*self.cell_height)+self.cell_height//2+TOP_BOTTOM_BUFFER//2), 5)
+                                int(coin.y*self.cell_height)+self.cell_height//2+TOP_BOTTOM_BUFFER//2), 3)
+    def draw_pellets(self):
+         for pellet in self.pellet:
+             pygame.draw.circle(self.screen, (200, 7, 136),
+                               (int(pellet.x*self.cell_width)+self.cell_width//2+TOP_BOTTOM_BUFFER//2,
+                                int(pellet.y*self.cell_height)+self.cell_height//2+TOP_BOTTOM_BUFFER//2), 5)
 
 ########################### GAME OVER FUNCTIONS ################################
 

@@ -141,13 +141,13 @@ class Enemy:
 
     def set_colour(self):
         if self.number == 0:
-            return (43, 78, 203)
+            return (255, 0, 0)
         if self.number == 1:
-            return (197, 200, 27)
+            return (235, 131, 52)
         if self.number == 2:
-            return (189, 29, 29)
+            return (7, 200, 184)
         if self.number == 3:
-            return (215, 159, 33)
+            return (200, 7, 142)
 
     def set_personality(self):
         if self.number == 0:
