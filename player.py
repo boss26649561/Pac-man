@@ -16,7 +16,7 @@ class Player:
         self.speed = 2
         self.lives = 3
         self.power = False
-        self.powerTimer = False
+        self.start_timer = None
         
 
     def update(self):
@@ -39,18 +39,14 @@ class Player:
         if self.on_pellet():
             self.powerTimer=True
             self.eat_pellet()
-            start_timer=pygame.time.get_ticks()
-        if self.power:
-            self.speed=4
-        else:
-            self.speed=2
+            self.start_timer=pygame.time.get_ticks()
 
-        if self.powerTimer:
-            
-            seconds=(pygame.time.get_ticks()-start_timer)/1000 #calculate how many seconds
+        if self.start_timer:
+            seconds=(pygame.time.get_ticks()-self.start_timer)/1000 #calculate how many seconds
             if seconds>3:
                 self.power=False
-                self.powerTimer=False
+                self.start_timer=None
+                
         
 
     def draw(self):

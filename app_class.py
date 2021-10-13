@@ -168,8 +168,13 @@ class App:
             enemy.update()
 
         for enemy in self.enemies:
-            if enemy.grid_pos == self.player.grid_pos:
+            if (enemy.grid_pos == self.player.grid_pos) and self.player.power==False :
                 self.remove_life()
+            if (enemy.grid_pos == self.player.grid_pos) and self.player.power:
+                 enemy.grid_pos = vec(enemy.starting_pos)
+                 enemy.pix_pos = enemy.get_pix_pos()
+                 enemy.direction *= 0
+
 
         if self.totalscore == self.player.current_score:
             self.state = "game over"
