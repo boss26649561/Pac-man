@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>app_class API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>app_class</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import pygame 
+import sys
+import copy
+from settings import *
+from player_class import *
+from enemy_class import *
+
+
+pygame.init()
+vec = pygame.math.Vector2
+
+
+class App:
+    def __init__(self):
+        self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
+        self.clock = pygame.time.Clock()
+        self.running = True
+        self.state = &#39;start&#39;
+        self.cell_width = MAZE_WIDTH//COLS
+        self.cell_height = MAZE_HEIGHT//ROWS
+        self.walls = []
+        self.coins = []
+        self.enemies = []
+        self.e_pos = []
+        self.p_pos = None
+        self.load()
+        self.player = Player(self, vec(self.p_pos))
+        self.make_enemies()
+
+    def run(self):
+        while self.running:
+            if self.state == &#39;start&#39;:
+                self.start_events()
+                self.start_update()
+                self.start_draw()
+            elif self.state == &#39;playing&#39;:
+                self.playing_events()
+                self.playing_update()
+                self.playing_draw()
+            elif self.state == &#39;game over&#39;:
+                self.game_over_events()
+                self.game_over_update()
+                self.game_over_draw()
+            else:
+                self.running = False
+            self.clock.tick(FPS)
+        pygame.quit()
+        sys.exit()
+
+############################ HELPER FUNCTIONS ##################################
+
+    def draw_text(self, words, screen, pos, size, colour, font_name, centered=False):
+        font = pygame.font.SysFont(font_name, size)
+        text = font.render(words, False, colour)
+        text_size = text.get_size()
+        if centered:
+            pos[0] = pos[0]-text_size[0]//2
+            pos[1] = pos[1]-text_size[1]//2
+        screen.blit(text, pos)
+
+    def load(self):
+        self.background = pygame.image.load(&#39;maze.png&#39;)
+        self.background = pygame.transform.scale(self.background, (MAZE_WIDTH, MAZE_HEIGHT))
+
+        # Opening walls file
+        # Creating walls list with co-ords of walls
+        # stored as  a vector
+        with open(&#34;walls.txt&#34;, &#39;r&#39;) as file:
+            for yidx, line in enumerate(file):
+                for xidx, char in enumerate(line):
+                    if char == &#34;1&#34;:
+                        self.walls.append(vec(xidx, yidx))
+                    elif char == &#34;C&#34;:
+                        self.coins.append(vec(xidx, yidx))
+                    elif char == &#34;P&#34;:
+                        self.p_pos = [xidx, yidx]
+                    elif char in [&#34;2&#34;, &#34;3&#34;, &#34;4&#34;, &#34;5&#34;]:
+                        self.e_pos.append([xidx, yidx])
+                        
+                    elif char == &#34;B&#34;:
+                        pygame.draw.rect(self.background, BLACK, (xidx*self.cell_width, yidx*self.cell_height,
+                                                                  self.cell_width, self.cell_height))
+
+    def make_enemies(self):
+        for idx, pos in enumerate(self.e_pos):
+            self.enemies.append(Enemy(self, vec(pos), idx))
+
+    def draw_grid(self):
+        for x in range(WIDTH//self.cell_width):
+            pygame.draw.line(self.background, GREY, (x*self.cell_width, 0),
+                             (x*self.cell_width, HEIGHT))
+        for x in range(HEIGHT//self.cell_height):
+            pygame.draw.line(self.background, GREY, (0, x*self.cell_height),
+                             (WIDTH, x*self.cell_height))
+        # for coin in self.coins:
+        #     pygame.draw.rect(self.background, (167, 179, 34), (coin.x*self.cell_width,
+        #                                                        coin.y*self.cell_height, self.cell_width, self.cell_height))
+
+    def reset(self):
+        self.player.lives = 3
+        self.player.current_score = 0
+        self.player.grid_pos = vec(self.player.starting_pos)
+        self.player.pix_pos = self.player.get_pix_pos()
+        self.player.direction *= 0
+        for enemy in self.enemies:
+            enemy.grid_pos = vec(enemy.starting_pos)
+            enemy.pix_pos = enemy.get_pix_pos()
+            enemy.direction *= 0
+
+        self.coins = []
+        with open(&#34;walls.txt&#34;, &#39;r&#39;) as file:
+            for yidx, line in enumerate(file):
+                for xidx, char in enumerate(line):
+                    if char == &#39;C&#39;:
+                        self.coins.append(vec(xidx, yidx))
+        self.state = &#34;playing&#34;
+
+
+########################### INTRO FUNCTIONS ####################################
+
+    def start_events(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.running = False
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+                self.state = &#39;playing&#39;
+
+    def start_update(self):
+        pass
+
+    def start_draw(self):
+        self.screen.fill(BLACK)
+        self.draw_text(&#39;PUSH SPACE BAR&#39;, self.screen, [
+                       WIDTH//2, HEIGHT//2-50], START_TEXT_SIZE, (170, 132, 58), START_FONT, centered=True)
+        self.draw_text(&#39;1 PLAYER ONLY&#39;, self.screen, [
+                       WIDTH//2, HEIGHT//2+50], START_TEXT_SIZE, (44, 167, 198), START_FONT, centered=True)
+        self.draw_text(&#39;HIGH SCORE&#39;, self.screen, [4, 0],
+                       START_TEXT_SIZE, (255, 255, 255), START_FONT)
+        pygame.display.update()
+
+########################### PLAYING FUNCTIONS ##################################
+
+    def playing_events(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.running = False
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT:
+                    self.player.move(vec(-1, 0))
+                if event.key == pygame.K_RIGHT:
+                    self.player.move(vec(1, 0))
+                if event.key == pygame.K_UP:
+                    self.player.move(vec(0, -1))
+                if event.key == pygame.K_DOWN:
+                    self.player.move(vec(0, 1))
+
+    def playing_update(self):
+        self.player.update()
+        for enemy in self.enemies:
+            enemy.update()
+
+        for enemy in self.enemies:
+            if enemy.grid_pos == self.player.grid_pos:
+                self.remove_life()
+
+    def playing_draw(self):
+        self.screen.fill(BLACK)
+        self.screen.blit(self.background, (TOP_BOTTOM_BUFFER//2, TOP_BOTTOM_BUFFER//2))
+        self.draw_coins()
+        # self.draw_grid()
+        self.draw_text(&#39;CURRENT SCORE: {}&#39;.format(self.player.current_score),
+                       self.screen, [60, 0], 18, WHITE, START_FONT)
+        self.player.draw()
+        for enemy in self.enemies:
+            enemy.draw()
+        pygame.display.update()
+
+    def remove_life(self):
+        self.player.lives -= 1
+        if self.player.lives == 0:
+            self.state = &#34;game over&#34;
+        else:
+            self.player.grid_pos = vec(self.player.starting_pos)
+            self.player.pix_pos = self.player.get_pix_pos()
+            self.player.direction *= 0
+            for enemy in self.enemies:
+                enemy.grid_pos = vec(enemy.starting_pos)
+                enemy.pix_pos = enemy.get_pix_pos()
+                enemy.direction *= 0
+
+    def draw_coins(self):
+        for coin in self.coins:
+            pygame.draw.circle(self.screen, (124, 123, 7),
+                               (int(coin.x*self.cell_width)+self.cell_width//2+TOP_BOTTOM_BUFFER//2,
+                                int(coin.y*self.cell_height)+self.cell_height//2+TOP_BOTTOM_BUFFER//2), 5)
+
+########################### GAME OVER FUNCTIONS ################################
+
+    def game_over_events(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.running = False
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+                self.reset()
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+                self.running = False
+
+    def game_over_update(self):
+        pass
+
+    def game_over_draw(self):
+        self.screen.fill(BLACK)
+        quit_text = &#34;Press the escape button to QUIT&#34;
+        again_text = &#34;Press SPACE bar to PLAY AGAIN&#34;
+        self.draw_text(&#34;GAME OVER&#34;, self.screen, [WIDTH//2, 100],  52, RED, &#34;arial&#34;, centered=True)
+        self.draw_text(again_text, self.screen, [
+                       WIDTH//2, HEIGHT//2],  36, (190, 190, 190), &#34;arial&#34;, centered=True)
+        self.draw_text(quit_text, self.screen, [
+                       WIDTH//2, HEIGHT//1.5],  36, (190, 190, 190), &#34;arial&#34;, centered=True)
+        pygame.display.update()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="app_class.App"><code class="flex name class">
+<span>class <span class="ident">App</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class App:
+    def __init__(self):
+        self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
+        self.clock = pygame.time.Clock()
+        self.running = True
+        self.state = &#39;start&#39;
+        self.cell_width = MAZE_WIDTH//COLS
+        self.cell_height = MAZE_HEIGHT//ROWS
+        self.walls = []
+        self.coins = []
+        self.enemies = []
+        self.e_pos = []
+        self.p_pos = None
+        self.load()
+        self.player = Player(self, vec(self.p_pos))
+        self.make_enemies()
+
+    def run(self):
+        while self.running:
+            if self.state == &#39;start&#39;:
+                self.start_events()
+                self.start_update()
+                self.start_draw()
+            elif self.state == &#39;playing&#39;:
+                self.playing_events()
+                self.playing_update()
+                self.playing_draw()
+            elif self.state == &#39;game over&#39;:
+                self.game_over_events()
+                self.game_over_update()
+                self.game_over_draw()
+            else:
+                self.running = False
+            self.clock.tick(FPS)
+        pygame.quit()
+        sys.exit()
+
+############################ HELPER FUNCTIONS ##################################
+
+    def draw_text(self, words, screen, pos, size, colour, font_name, centered=False):
+        font = pygame.font.SysFont(font_name, size)
+        text = font.render(words, False, colour)
+        text_size = text.get_size()
+        if centered:
+            pos[0] = pos[0]-text_size[0]//2
+            pos[1] = pos[1]-text_size[1]//2
+        screen.blit(text, pos)
+
+    def load(self):
+        self.background = pygame.image.load(&#39;maze.png&#39;)
+        self.background = pygame.transform.scale(self.background, (MAZE_WIDTH, MAZE_HEIGHT))
+
+        # Opening walls file
+        # Creating walls list with co-ords of walls
+        # stored as  a vector
+        with open(&#34;walls.txt&#34;, &#39;r&#39;) as file:
+            for yidx, line in enumerate(file):
+                for xidx, char in enumerate(line):
+                    if char == &#34;1&#34;:
+                        self.walls.append(vec(xidx, yidx))
+                    elif char == &#34;C&#34;:
+                        self.coins.append(vec(xidx, yidx))
+                    elif char == &#34;P&#34;:
+                        self.p_pos = [xidx, yidx]
+                    elif char in [&#34;2&#34;, &#34;3&#34;, &#34;4&#34;, &#34;5&#34;]:
+                        self.e_pos.append([xidx, yidx])
+                        
+                    elif char == &#34;B&#34;:
+                        pygame.draw.rect(self.background, BLACK, (xidx*self.cell_width, yidx*self.cell_height,
+                                                                  self.cell_width, self.cell_height))
+
+    def make_enemies(self):
+        for idx, pos in enumerate(self.e_pos):
+            self.enemies.append(Enemy(self, vec(pos), idx))
+
+    def draw_grid(self):
+        for x in range(WIDTH//self.cell_width):
+            pygame.draw.line(self.background, GREY, (x*self.cell_width, 0),
+                             (x*self.cell_width, HEIGHT))
+        for x in range(HEIGHT//self.cell_height):
+            pygame.draw.line(self.background, GREY, (0, x*self.cell_height),
+                             (WIDTH, x*self.cell_height))
+        # for coin in self.coins:
+        #     pygame.draw.rect(self.background, (167, 179, 34), (coin.x*self.cell_width,
+        #                                                        coin.y*self.cell_height, self.cell_width, self.cell_height))
+
+    def reset(self):
+        self.player.lives = 3
+        self.player.current_score = 0
+        self.player.grid_pos = vec(self.player.starting_pos)
+        self.player.pix_pos = self.player.get_pix_pos()
+        self.player.direction *= 0
+        for enemy in self.enemies:
+            enemy.grid_pos = vec(enemy.starting_pos)
+            enemy.pix_pos = enemy.get_pix_pos()
+            enemy.direction *= 0
+
+        self.coins = []
+        with open(&#34;walls.txt&#34;, &#39;r&#39;) as file:
+            for yidx, line in enumerate(file):
+                for xidx, char in enumerate(line):
+                    if char == &#39;C&#39;:
+                        self.coins.append(vec(xidx, yidx))
+        self.state = &#34;playing&#34;
+
+
+########################### INTRO FUNCTIONS ####################################
+
+    def start_events(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.running = False
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+                self.state = &#39;playing&#39;
+
+    def start_update(self):
+        pass
+
+    def start_draw(self):
+        self.screen.fill(BLACK)
+        self.draw_text(&#39;PUSH SPACE BAR&#39;, self.screen, [
+                       WIDTH//2, HEIGHT//2-50], START_TEXT_SIZE, (170, 132, 58), START_FONT, centered=True)
+        self.draw_text(&#39;1 PLAYER ONLY&#39;, self.screen, [
+                       WIDTH//2, HEIGHT//2+50], START_TEXT_SIZE, (44, 167, 198), START_FONT, centered=True)
+        self.draw_text(&#39;HIGH SCORE&#39;, self.screen, [4, 0],
+                       START_TEXT_SIZE, (255, 255, 255), START_FONT)
+        pygame.display.update()
+
+########################### PLAYING FUNCTIONS ##################################
+
+    def playing_events(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.running = False
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT:
+                    self.player.move(vec(-1, 0))
+                if event.key == pygame.K_RIGHT:
+                    self.player.move(vec(1, 0))
+                if event.key == pygame.K_UP:
+                    self.player.move(vec(0, -1))
+                if event.key == pygame.K_DOWN:
+                    self.player.move(vec(0, 1))
+
+    def playing_update(self):
+        self.player.update()
+        for enemy in self.enemies:
+            enemy.update()
+
+        for enemy in self.enemies:
+            if enemy.grid_pos == self.player.grid_pos:
+                self.remove_life()
+
+    def playing_draw(self):
+        self.screen.fill(BLACK)
+        self.screen.blit(self.background, (TOP_BOTTOM_BUFFER//2, TOP_BOTTOM_BUFFER//2))
+        self.draw_coins()
+        # self.draw_grid()
+        self.draw_text(&#39;CURRENT SCORE: {}&#39;.format(self.player.current_score),
+                       self.screen, [60, 0], 18, WHITE, START_FONT)
+        self.player.draw()
+        for enemy in self.enemies:
+            enemy.draw()
+        pygame.display.update()
+
+    def remove_life(self):
+        self.player.lives -= 1
+        if self.player.lives == 0:
+            self.state = &#34;game over&#34;
+        else:
+            self.player.grid_pos = vec(self.player.starting_pos)
+            self.player.pix_pos = self.player.get_pix_pos()
+            self.player.direction *= 0
+            for enemy in self.enemies:
+                enemy.grid_pos = vec(enemy.starting_pos)
+                enemy.pix_pos = enemy.get_pix_pos()
+                enemy.direction *= 0
+
+    def draw_coins(self):
+        for coin in self.coins:
+            pygame.draw.circle(self.screen, (124, 123, 7),
+                               (int(coin.x*self.cell_width)+self.cell_width//2+TOP_BOTTOM_BUFFER//2,
+                                int(coin.y*self.cell_height)+self.cell_height//2+TOP_BOTTOM_BUFFER//2), 5)
+
+########################### GAME OVER FUNCTIONS ################################
+
+    def game_over_events(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.running = False
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+                self.reset()
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+                self.running = False
+
+    def game_over_update(self):
+        pass
+
+    def game_over_draw(self):
+        self.screen.fill(BLACK)
+        quit_text = &#34;Press the escape button to QUIT&#34;
+        again_text = &#34;Press SPACE bar to PLAY AGAIN&#34;
+        self.draw_text(&#34;GAME OVER&#34;, self.screen, [WIDTH//2, 100],  52, RED, &#34;arial&#34;, centered=True)
+        self.draw_text(again_text, self.screen, [
+                       WIDTH//2, HEIGHT//2],  36, (190, 190, 190), &#34;arial&#34;, centered=True)
+        self.draw_text(quit_text, self.screen, [
+                       WIDTH//2, HEIGHT//1.5],  36, (190, 190, 190), &#34;arial&#34;, centered=True)
+        pygame.display.update()</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="app_class.App.draw_coins"><code class="name flex">
+<span>def <span class="ident">draw_coins</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def draw_coins(self):
+    for coin in self.coins:
+        pygame.draw.circle(self.screen, (124, 123, 7),
+                           (int(coin.x*self.cell_width)+self.cell_width//2+TOP_BOTTOM_BUFFER//2,
+                            int(coin.y*self.cell_height)+self.cell_height//2+TOP_BOTTOM_BUFFER//2), 5)</code></pre>
+</details>
+</dd>
+<dt id="app_class.App.draw_grid"><code class="name flex">
+<span>def <span class="ident">draw_grid</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def draw_grid(self):
+    for x in range(WIDTH//self.cell_width):
+        pygame.draw.line(self.background, GREY, (x*self.cell_width, 0),
+                         (x*self.cell_width, HEIGHT))
+    for x in range(HEIGHT//self.cell_height):
+        pygame.draw.line(self.background, GREY, (0, x*self.cell_height),
+                         (WIDTH, x*self.cell_height))
+    # for coin in self.coins:
+    #     pygame.draw.rect(self.background, (167, 179, 34), (coin.x*self.cell_width,
+    #                                                        coin.y*self.cell_height, self.cell_width, self.cell_height))</code></pre>
+</details>
+</dd>
+<dt id="app_class.App.draw_text"><code class="name flex">
+<span>def <span class="ident">draw_text</span></span>(<span>self, words, screen, pos, size, colour, font_name, centered=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def draw_text(self, words, screen, pos, size, colour, font_name, centered=False):
+    font = pygame.font.SysFont(font_name, size)
+    text = font.render(words, False, colour)
+    text_size = text.get_size()
+    if centered:
+        pos[0] = pos[0]-text_size[0]//2
+        pos[1] = pos[1]-text_size[1]//2
+    screen.blit(text, pos)</code></pre>
+</details>
+</dd>
+<dt id="app_class.App.game_over_draw"><code class="name flex">
+<span>def <span class="ident">game_over_draw</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def game_over_draw(self):
+    self.screen.fill(BLACK)
+    quit_text = &#34;Press the escape button to QUIT&#34;
+    again_text = &#34;Press SPACE bar to PLAY AGAIN&#34;
+    self.draw_text(&#34;GAME OVER&#34;, self.screen, [WIDTH//2, 100],  52, RED, &#34;arial&#34;, centered=True)
+    self.draw_text(again_text, self.screen, [
+                   WIDTH//2, HEIGHT//2],  36, (190, 190, 190), &#34;arial&#34;, centered=True)
+    self.draw_text(quit_text, self.screen, [
+                   WIDTH//2, HEIGHT//1.5],  36, (190, 190, 190), &#34;arial&#34;, centered=True)
+    pygame.display.update()</code></pre>
+</details>
+</dd>
+<dt id="app_class.App.game_over_events"><code class="name flex">
+<span>def <span class="ident">game_over_events</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def game_over_events(self):
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            self.running = False
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+            self.reset()
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+            self.running = False</code></pre>
+</details>
+</dd>
+<dt id="app_class.App.game_over_update"><code class="name flex">
+<span>def <span class="ident">game_over_update</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def game_over_update(self):
+    pass</code></pre>
+</details>
+</dd>
+<dt id="app_class.App.load"><code class="name flex">
+<span>def <span class="ident">load</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load(self):
+    self.background = pygame.image.load(&#39;maze.png&#39;)
+    self.background = pygame.transform.scale(self.background, (MAZE_WIDTH, MAZE_HEIGHT))
+
+    # Opening walls file
+    # Creating walls list with co-ords of walls
+    # stored as  a vector
+    with open(&#34;walls.txt&#34;, &#39;r&#39;) as file:
+        for yidx, line in enumerate(file):
+            for xidx, char in enumerate(line):
+                if char == &#34;1&#34;:
+                    self.walls.append(vec(xidx, yidx))
+                elif char == &#34;C&#34;:
+                    self.coins.append(vec(xidx, yidx))
+                elif char == &#34;P&#34;:
+                    self.p_pos = [xidx, yidx]
+                elif char in [&#34;2&#34;, &#34;3&#34;, &#34;4&#34;, &#34;5&#34;]:
+                    self.e_pos.append([xidx, yidx])
+                    
+                elif char == &#34;B&#34;:
+                    pygame.draw.rect(self.background, BLACK, (xidx*self.cell_width, yidx*self.cell_height,
+                                                              self.cell_width, self.cell_height))</code></pre>
+</details>
+</dd>
+<dt id="app_class.App.make_enemies"><code class="name flex">
+<span>def <span class="ident">make_enemies</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def make_enemies(self):
+    for idx, pos in enumerate(self.e_pos):
+        self.enemies.append(Enemy(self, vec(pos), idx))</code></pre>
+</details>
+</dd>
+<dt id="app_class.App.playing_draw"><code class="name flex">
+<span>def <span class="ident">playing_draw</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def playing_draw(self):
+    self.screen.fill(BLACK)
+    self.screen.blit(self.background, (TOP_BOTTOM_BUFFER//2, TOP_BOTTOM_BUFFER//2))
+    self.draw_coins()
+    # self.draw_grid()
+    self.draw_text(&#39;CURRENT SCORE: {}&#39;.format(self.player.current_score),
+                   self.screen, [60, 0], 18, WHITE, START_FONT)
+    self.player.draw()
+    for enemy in self.enemies:
+        enemy.draw()
+    pygame.display.update()</code></pre>
+</details>
+</dd>
+<dt id="app_class.App.playing_events"><code class="name flex">
+<span>def <span class="ident">playing_events</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def playing_events(self):
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            self.running = False
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                self.player.move(vec(-1, 0))
+            if event.key == pygame.K_RIGHT:
+                self.player.move(vec(1, 0))
+            if event.key == pygame.K_UP:
+                self.player.move(vec(0, -1))
+            if event.key == pygame.K_DOWN:
+                self.player.move(vec(0, 1))</code></pre>
+</details>
+</dd>
+<dt id="app_class.App.playing_update"><code class="name flex">
+<span>def <span class="ident">playing_update</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def playing_update(self):
+    self.player.update()
+    for enemy in self.enemies:
+        enemy.update()
+
+    for enemy in self.enemies:
+        if enemy.grid_pos == self.player.grid_pos:
+            self.remove_life()</code></pre>
+</details>
+</dd>
+<dt id="app_class.App.remove_life"><code class="name flex">
+<span>def <span class="ident">remove_life</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def remove_life(self):
+    self.player.lives -= 1
+    if self.player.lives == 0:
+        self.state = &#34;game over&#34;
+    else:
+        self.player.grid_pos = vec(self.player.starting_pos)
+        self.player.pix_pos = self.player.get_pix_pos()
+        self.player.direction *= 0
+        for enemy in self.enemies:
+            enemy.grid_pos = vec(enemy.starting_pos)
+            enemy.pix_pos = enemy.get_pix_pos()
+            enemy.direction *= 0</code></pre>
+</details>
+</dd>
+<dt id="app_class.App.reset"><code class="name flex">
+<span>def <span class="ident">reset</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def reset(self):
+    self.player.lives = 3
+    self.player.current_score = 0
+    self.player.grid_pos = vec(self.player.starting_pos)
+    self.player.pix_pos = self.player.get_pix_pos()
+    self.player.direction *= 0
+    for enemy in self.enemies:
+        enemy.grid_pos = vec(enemy.starting_pos)
+        enemy.pix_pos = enemy.get_pix_pos()
+        enemy.direction *= 0
+
+    self.coins = []
+    with open(&#34;walls.txt&#34;, &#39;r&#39;) as file:
+        for yidx, line in enumerate(file):
+            for xidx, char in enumerate(line):
+                if char == &#39;C&#39;:
+                    self.coins.append(vec(xidx, yidx))
+    self.state = &#34;playing&#34;</code></pre>
+</details>
+</dd>
+<dt id="app_class.App.run"><code class="name flex">
+<span>def <span class="ident">run</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def run(self):
+    while self.running:
+        if self.state == &#39;start&#39;:
+            self.start_events()
+            self.start_update()
+            self.start_draw()
+        elif self.state == &#39;playing&#39;:
+            self.playing_events()
+            self.playing_update()
+            self.playing_draw()
+        elif self.state == &#39;game over&#39;:
+            self.game_over_events()
+            self.game_over_update()
+            self.game_over_draw()
+        else:
+            self.running = False
+        self.clock.tick(FPS)
+    pygame.quit()
+    sys.exit()</code></pre>
+</details>
+</dd>
+<dt id="app_class.App.start_draw"><code class="name flex">
+<span>def <span class="ident">start_draw</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def start_draw(self):
+    self.screen.fill(BLACK)
+    self.draw_text(&#39;PUSH SPACE BAR&#39;, self.screen, [
+                   WIDTH//2, HEIGHT//2-50], START_TEXT_SIZE, (170, 132, 58), START_FONT, centered=True)
+    self.draw_text(&#39;1 PLAYER ONLY&#39;, self.screen, [
+                   WIDTH//2, HEIGHT//2+50], START_TEXT_SIZE, (44, 167, 198), START_FONT, centered=True)
+    self.draw_text(&#39;HIGH SCORE&#39;, self.screen, [4, 0],
+                   START_TEXT_SIZE, (255, 255, 255), START_FONT)
+    pygame.display.update()</code></pre>
+</details>
+</dd>
+<dt id="app_class.App.start_events"><code class="name flex">
+<span>def <span class="ident">start_events</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def start_events(self):
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            self.running = False
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+            self.state = &#39;playing&#39;</code></pre>
+</details>
+</dd>
+<dt id="app_class.App.start_update"><code class="name flex">
+<span>def <span class="ident">start_update</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def start_update(self):
+    pass</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="app_class.App" href="#app_class.App">App</a></code></h4>
+<ul class="two-column">
+<li><code><a title="app_class.App.draw_coins" href="#app_class.App.draw_coins">draw_coins</a></code></li>
+<li><code><a title="app_class.App.draw_grid" href="#app_class.App.draw_grid">draw_grid</a></code></li>
+<li><code><a title="app_class.App.draw_text" href="#app_class.App.draw_text">draw_text</a></code></li>
+<li><code><a title="app_class.App.game_over_draw" href="#app_class.App.game_over_draw">game_over_draw</a></code></li>
+<li><code><a title="app_class.App.game_over_events" href="#app_class.App.game_over_events">game_over_events</a></code></li>
+<li><code><a title="app_class.App.game_over_update" href="#app_class.App.game_over_update">game_over_update</a></code></li>
+<li><code><a title="app_class.App.load" href="#app_class.App.load">load</a></code></li>
+<li><code><a title="app_class.App.make_enemies" href="#app_class.App.make_enemies">make_enemies</a></code></li>
+<li><code><a title="app_class.App.playing_draw" href="#app_class.App.playing_draw">playing_draw</a></code></li>
+<li><code><a title="app_class.App.playing_events" href="#app_class.App.playing_events">playing_events</a></code></li>
+<li><code><a title="app_class.App.playing_update" href="#app_class.App.playing_update">playing_update</a></code></li>
+<li><code><a title="app_class.App.remove_life" href="#app_class.App.remove_life">remove_life</a></code></li>
+<li><code><a title="app_class.App.reset" href="#app_class.App.reset">reset</a></code></li>
+<li><code><a title="app_class.App.run" href="#app_class.App.run">run</a></code></li>
+<li><code><a title="app_class.App.start_draw" href="#app_class.App.start_draw">start_draw</a></code></li>
+<li><code><a title="app_class.App.start_events" href="#app_class.App.start_events">start_events</a></code></li>
+<li><code><a title="app_class.App.start_update" href="#app_class.App.start_update">start_update</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
