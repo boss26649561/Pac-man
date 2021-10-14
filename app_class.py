@@ -1,4 +1,5 @@
 import pygame 
+import pygame_menu
 import sys
 import copy
 from settings import *
@@ -25,6 +26,7 @@ class App:
         self.e_pos = []
         self.p_pos = None
         self.totalscore=0
+        self.mazetype = 'default'
         self.load()
         self.player = Player(self, vec(self.p_pos))
         self.make_enemies()
@@ -125,26 +127,51 @@ class App:
         self.state = "playing"
 
 
-########################### INTRO FUNCTIONS ####################################
-
+########################### Main menu ####################################
     def start_events(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
             if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
                 self.state = 'playing'
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT:
+                self.mazetype = 'random'  
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT:
+                self.mazetype = 'default'  
+            
 
     def start_update(self):
         pass
 
     def start_draw(self):
+        Pacman = pygame.image.load('./Images/pacman-menu.png')
         self.screen.fill(BLACK)
-        self.draw_text('PUSH SPACE BAR', self.screen, [
-                       WIDTH//2, HEIGHT//2-50], START_TEXT_SIZE, (170, 132, 58), START_FONT, centered=True)
-        self.draw_text('1 PLAYER ONLY', self.screen, [
-                       WIDTH//2, HEIGHT//2+50], START_TEXT_SIZE, (44, 167, 198), START_FONT, centered=True)
+
+        self.screen.blit(Pacman, [WIDTH//2-100, HEIGHT//2-320])
+        self.draw_text('Pacman', self.screen, [
+            WIDTH//2, HEIGHT//2-320], START_TEXT_SIZE, (255, 255, 0), START_FONT, centered=True)
+        self.draw_text('Space bar to start', self.screen, [
+            WIDTH//2, HEIGHT//2-50], START_TEXT_SIZE, (170, 132, 58), START_FONT, centered=True)
+        self.draw_text('Maze type '+ self.mazetype, self.screen, [
+            WIDTH//2, HEIGHT//2+50], START_TEXT_SIZE, (44, 167, 198), START_FONT, centered=True)
+        self.draw_text('Year:2021 ', self.screen, [
+            WIDTH//2, HEIGHT//2+200], START_TEXT_SIZE, (44, 167, 198), START_FONT, centered=True)
+        self.draw_text('Course Code: 3815ICT and 7805ICT ', self.screen, [
+            WIDTH//2, HEIGHT//2+220], START_TEXT_SIZE, (44, 167, 198), START_FONT, centered=True)
+        self.draw_text('Chun on Chan ', self.screen, [
+            WIDTH//2, HEIGHT//2+240], START_TEXT_SIZE, (44, 167, 198), START_FONT, centered=True)
+        self.draw_text('Guan-Tse Wu ', self.screen, [
+            WIDTH//2, HEIGHT//2+260], START_TEXT_SIZE, (44, 167, 198), START_FONT, centered=True)
+        self.draw_text('Sirawat Thiangthae ', self.screen, [
+            WIDTH//2, HEIGHT//2+280], START_TEXT_SIZE, (44, 167, 198), START_FONT, centered=True)
+        self.draw_text('Yan Li ', self.screen, [
+            WIDTH//2, HEIGHT//2+300], START_TEXT_SIZE, (44, 167, 198), START_FONT, centered=True)
+                       
+        
+        
 
         pygame.display.update()
+        
 
 ########################### PLAYING FUNCTIONS ##################################
 

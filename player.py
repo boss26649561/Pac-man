@@ -40,10 +40,14 @@ class Player:
             self.powerTimer=True
             self.eat_pellet()
             self.start_timer=pygame.time.get_ticks()
+            powerpellet = pygame.mixer.Sound('./Sound/PowerPellet_Effect.mp3')
+            powerpellet.play()
+            powerpellet.set_volume(0.1)
+
 
         if self.start_timer:
             seconds=(pygame.time.get_ticks()-self.start_timer)/1000 #calculate how many seconds
-            if seconds>3:
+            if seconds>5:
                 self.power=False
                 self.start_timer=None
                 
