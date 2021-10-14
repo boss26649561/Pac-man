@@ -1,10 +1,10 @@
 import pygame 
-import pygame_menu
 import sys
 import copy
 from settings import *
 from player import *
 from enemy_class import *
+import random
 
 
 pygame.init()
@@ -27,6 +27,8 @@ class App:
         self.p_pos = None
         self.totalscore=0
         self.mazetype = 'default'
+        self.mazelocation = 'maze2.png'
+        self.wallslocation = 'walls2.txt'
         self.load()
         self.player = Player(self, vec(self.p_pos))
         self.make_enemies()
@@ -39,6 +41,10 @@ class App:
                 self.start_update()
                 self.start_draw()
             elif self.state == 'playing':
+                if self.mazetype == 'random':
+                    self.randomise()
+
+
                 self.playing_events()
                 self.playing_update()
                 self.playing_draw()
@@ -64,13 +70,13 @@ class App:
         screen.blit(text, pos)
 
     def load(self):
-        self.background = pygame.image.load('maze.png')
+        self.background = pygame.image.load(self.mazelocation)
         self.background = pygame.transform.scale(self.background, (MAZE_WIDTH, MAZE_HEIGHT))
         
         # Opening walls file
         # Creating walls list with co-ords of walls
         # stored as  a vector
-        with open("walls.txt", 'r') as file:
+        with open(self.wallslocation, 'r') as file:
             for yidx, line in enumerate(file):
                 for xidx, char in enumerate(line):
                     if char == "1":
@@ -117,7 +123,7 @@ class App:
 
         self.coins = []
         self.pellet = []
-        with open("walls.txt", 'r') as file:
+        with open(self.wallslocation, 'r') as file:
             for yidx, line in enumerate(file):
                 for xidx, char in enumerate(line):
                     if char == 'C':
@@ -174,6 +180,15 @@ class App:
         
 
 ########################### PLAYING FUNCTIONS ##################################
+    def randomise(self):
+        #randomnum=random.uniform(0, 1)
+        randomnum=1
+        if randomnum==0:
+            pass
+        elif randomnum==1:
+            self.mazelocation = 'maze2.png'
+            self.wallslocation = 'walls2.txt'
+
 
     def playing_events(self):
         for event in pygame.event.get():
