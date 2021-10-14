@@ -27,8 +27,8 @@ class App:
         self.p_pos = None
         self.totalscore=0
         self.mazetype = 'default'
-        self.mazelocation = 'maze2.png'
-        self.wallslocation = 'walls2.txt'
+        self.mazelocation = 'maze.png'
+        self.wallslocation = 'walls.txt'
         self.load()
         self.player = Player(self, vec(self.p_pos))
         self.make_enemies()
@@ -40,9 +40,13 @@ class App:
                 self.start_events()
                 self.start_update()
                 self.start_draw()
-            elif self.state == 'playing':
                 if self.mazetype == 'random':
                     self.randomise()
+                    self.load()
+                    self.player = Player(self, vec(self.p_pos))
+                    self.make_enemies()
+            elif self.state == 'playing':
+
 
 
                 self.playing_events()
@@ -72,6 +76,13 @@ class App:
     def load(self):
         self.background = pygame.image.load(self.mazelocation)
         self.background = pygame.transform.scale(self.background, (MAZE_WIDTH, MAZE_HEIGHT))
+        self.walls = []
+        self.coins = []
+        self.pellet = []
+        self.enemies = []
+        self.e_pos = []
+        self.p_pos = None
+        self.totalscore=0
         
         # Opening walls file
         # Creating walls list with co-ords of walls
