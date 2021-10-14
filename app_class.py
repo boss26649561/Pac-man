@@ -42,10 +42,10 @@ class App:
                 self.playing_events()
                 self.playing_update()
                 self.playing_draw()
-            elif self.state == 'game over':
-                self.game_over_events()
-                self.game_over_update()
-                self.game_over_draw()
+            elif self.state == 'win':
+                self.win_events()
+                self.win_update()
+                self.win_draw()
             else:
                 self.running = False
             self.clock.tick(FPS)
@@ -66,7 +66,7 @@ class App:
     def load(self):
         self.background = pygame.image.load('maze.png')
         self.background = pygame.transform.scale(self.background, (MAZE_WIDTH, MAZE_HEIGHT))
-
+        
         # Opening walls file
         # Creating walls list with co-ords of walls
         # stored as  a vector
@@ -123,8 +123,8 @@ class App:
                     if char == 'C':
                         self.coins.append(vec(xidx, yidx))
                     if char == '6':
-                        self.pellet.append(vec[xidx, yidx])
-        self.state = "playing"
+                        self.pellet.append(vec(xidx, yidx))
+        
 
 
 ########################### Main menu ####################################
@@ -204,7 +204,7 @@ class App:
 
 
         if self.totalscore == self.player.current_score:
-            self.state = "game over"
+            self.state = "win"
 
 
     def playing_draw(self):
@@ -222,10 +222,13 @@ class App:
 
     def remove_life(self):
         self.player.lives -= 1
-        pygame.mixer.music.load('./Sound/Death_Sound_Effect.mp3')
-        pygame.mixer.music.play(0)
+        death=pygame.mixer.Sound('./Sound/Death_Sound_Effect.mp3')
+        death.play()
+        death.set_volume(0.1)
         if self.player.lives == 0:
-            self.state = "game over"
+            self.reset()
+            self.state = "start"
+            
         else:
             self.player.grid_pos = vec(self.player.starting_pos)
             self.player.pix_pos = self.player.get_pix_pos()
@@ -246,25 +249,26 @@ class App:
                                (int(pellet.x*self.cell_width)+self.cell_width//2+TOP_BOTTOM_BUFFER//2,
                                 int(pellet.y*self.cell_height)+self.cell_height//2+TOP_BOTTOM_BUFFER//2), 5)
 
-########################### GAME OVER FUNCTIONS ################################
+########################### Win menu FUNCTIONS ################################
 
-    def game_over_events(self):
+    def win_events(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
             if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+                self.state='start'
                 self.reset()
             if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
                 self.running = False
 
-    def game_over_update(self):
+    def win_update(self):
         pass
 
-    def game_over_draw(self):
+    def win_draw(self):
         self.screen.fill(BLACK)
         quit_text = "Press the escape button to QUIT"
-        again_text = "Press SPACE bar to PLAY AGAIN"
-        self.draw_text("GAME OVER", self.screen, [WIDTH//2, 100],  52, RED, "arial", centered=True)
+        again_text = "Press SPACE bar to go to the main menu"
+        self.draw_text("Congratulations on winning", self.screen, [WIDTH//2, 100],  52, RED, "arial", centered=True)
         self.draw_text(again_text, self.screen, [
                        WIDTH//2, HEIGHT//2],  36, (190, 190, 190), "arial", centered=True)
         self.draw_text(quit_text, self.screen, [
